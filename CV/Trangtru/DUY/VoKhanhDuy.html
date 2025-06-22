@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Cá Nhân - Võ Khánh Duy</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      .container,
+      header,
+      main,
+      footer {
+        position: relative;
+        z-index: 1;
+      }
+      .section img {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 10px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+
+    <div class="container">
+      <header class="fade-in">
+        <img src="./Anh/Duyloz.jpg" alt="Avatar" class="avatar pulse" />
+        <h1 class="title typewriter" id="typing"></h1>
+        <p class="tagline fade-in">
+          💻 Lập trình viên | 🎯 Mục tiêu rõ ràng | 🚀 Không ngừng học hỏi
+        </p>
+      </header>
+
+      <nav class="menu fade-in">
+        <ul>
+          <li><a href="#" data-target="intro">Giới thiệu</a></li>
+          <li><a href="#" data-target="goals">Mục tiêu</a></li>
+          <li><a href="#" data-target="skills">Kỹ năng</a></li>
+          <li><a href="#" data-target="education">Học vấn</a></li>
+          <li><a href="#" data-target="experience">Kinh nghiệm</a></li>
+          <li><a href="#" data-target="projects">Dự án</a></li>
+          <li><a href="#" data-target="interests">Sở thích</a></li>
+          <li><a href="#" data-target="contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+
+      <main class="content">
+        <section id="intro" class="section animated-section">
+          <h2>🧑‍💼 Giới thiệu bản thân</h2>
+          <p>
+            Tôi là Võ Khánh Duy, sinh viên năm 2 ngành Công nghệ Thông tin tại
+            Trường Đại học Giao thông Vận tải TP.HCM.
+          </p>
+          <button onclick="toggleDetails('more-intro')" class="btn glow">
+            Xem thêm
+          </button>
+          <div id="more-intro" style="display: none; margin-top: 10px">
+            <p>
+              Tôi đam mê lập trình web, ứng dụng di động và luôn học hỏi những
+              công nghệ mới như AI, DevOps.
+            </p>
+          </div>
+        </section>
+
+        <section id="goals" class="section animated-section">
+          <h2>🎯 Mục tiêu nghề nghiệp</h2>
+          <img src="images/goals.jpg" alt="Mục tiêu nghề nghiệp" />
+          <ul>
+            <li>
+              <strong>Ngắn hạn:</strong> Nắm vững kiến thức cơ bản, thực tập tại
+              công ty lập trình
+            </li>
+            <li>
+              <strong>Dài hạn:</strong> Trở thành Fullstack Developer và hướng
+              đến vị trí Tech Lead
+            </li>
+          </ul>
+          <div style="margin-top: 10px">
+            <label>Hoàn thành mục tiêu ngắn hạn:</label>
+            <div
+              style="
+                background: #444;
+                border-radius: 20px;
+                overflow: hidden;
+                margin-top: 4px;
+              "
+            >
+              <div
+                style="
+                  width: 60%;
+                  background: #4a90e2;
+                  color: #fff;
+                  padding: 4px;
+                  text-align: center;
+                "
+              >
+                60%
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="section animated-section">
+          <h2>🛠️ Kỹ năng chuyên môn</h2>
+          <img src="images/skills.png" alt="Kỹ năng" />
+          <ul>
+            <li>C++ – ⭐⭐⭐⭐☆</li>
+            <li>ReactJS – ⭐⭐⭐⭐☆</li>
+            <li>Node.js – ⭐⭐⭐☆☆</li>
+            <li>MongoDB – ⭐⭐⭐☆☆</li>
+          </ul>
+        </section>
+
+        <section id="education" class="section animated-section">
+          <h2>🎓 Học vấn</h2>
+          <p>Trường Đại học Giao thông Vận tải TP.HCM</p>
+          <p>Chuyên ngành: Công nghệ Thông tin | GPA: 3.4/4.0</p>
+          <button
+            onclick="alert('GPA chi tiết:\\nKỹ thuật lập trình: A\\nCấu trúc dữ liệu: B+\\nLập trình Web: A+')"
+            class="btn glow"
+          >
+            Xem bảng điểm
+          </button>
+        </section>
+
+        <section id="experience" class="section animated-section">
+          <h2>💼 Kinh nghiệm thực tế</h2>
+          <ul>
+            <li><strong>2024:</strong> Thực hiện project ReactJS cá nhân</li>
+            <li>
+              <strong>2025:</strong> Tham gia nhóm phát triển phần mềm tại
+              trường
+            </li>
+          </ul>
+        </section>
+
+        <section id="projects" class="section animated-section">
+          <h2>🚀 Dự án nổi bật</h2>
+          <img src="images/projects.jpg" alt="Dự án" />
+          <ul>
+            <li>
+              <strong>Student Manager App:</strong> React + NodeJS <br /><a
+                href="https://github.com/yourgithub/student-manager"
+                target="_blank"
+                class="btn glow"
+                >Xem GitHub</a
+              >
+            </li>
+            <li><strong>Todo List:</strong> JavaScript + localStorage</li>
+          </ul>
+        </section>
+
+        <section id="interests" class="section animated-section">
+          <h2>🎨 Sở thích</h2>
+          <ul>
+            <li title="Thường luyện tập trên Leetcode, Codeforces">
+              🧠 Giải thuật
+            </li>
+            <li title="Thiết kế UI cho website, app">🎨 Thiết kế giao diện</li>
+            <li title="Đọc sách như Clean Code, bóng đá">📚 Sách & thể thao</li>
+          </ul>
+        </section>
+
+        <section id="contact" class="section animated-section">
+          <h2>📞 Liên hệ</h2>
+          <p><strong>Email:</strong> duy337757@gmail.com</p>
+          <p><strong>Điện thoại:</strong> 0377 334 041</p>
+          <p>
+            <strong>Facebook:</strong>
+            <a href="https://www.facebook.com/khanh.duy.416697" target="_blank"
+              >facebook.com/khanh.duy</a
+            >
+          </p>
+          <form
+            onsubmit="alert('Tin nhắn đã gửi!'); return false;"
+            style="margin-top: 10px"
+          >
+            <input
+              type="text"
+              placeholder="Tên bạn"
+              required
+              style="padding: 8px; width: 100%; margin: 4px 0"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              style="padding: 8px; width: 100%; margin: 4px 0"
+            />
+            <textarea
+              placeholder="Nội dung..."
+              rows="4"
+              required
+              style="padding: 8px; width: 100%; margin: 4px 0"
+            ></textarea>
+            <button type="submit" class="btn glow">Gửi</button>
+          </form>
+        </section>
+      </main>
+
+      <footer>
+        <p>✨ Thiết kế bởi Khánh Duy ✨</p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS.load("particles-js", "particles_star.json", function () {
+        console.log("Particles loaded.");
+      });
+
+      const text = "Võ Khánh Duy";
+      let i = 0;
+      function typeWriter() {
+        if (i < text.length) {
+          document.getElementById("typing").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 100);
+        }
+      }
+      typeWriter();
+
+      document.querySelectorAll(".menu a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const id = this.getAttribute("data-target");
+          const section = document.getElementById(id);
+          if (section) section.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      function toggleDetails(id) {
+        const el = document.getElementById(id);
+        el.style.display = el.style.display === "none" ? "block" : "none";
+      }
+    </script>
+  </body>
+</html>

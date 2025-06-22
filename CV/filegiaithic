@@ -1,0 +1,427 @@
+\**
+
+# Giải thích chi tiết CSS cho CV
+
+## 1. Styling cho thẻ BODY
+```css
+body {
+  background-image: linear-gradient(#636162, #b1afaf);
+  min-height: 100vh;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 20px;
+  font-family: "Times New Roman", Times, serif;
+}
+```
+**Giải thích:**
+- `background-image: linear-gradient(#636162, #b1afaf)`: Tạo background màu gradient từ xám đậm đến xám nhạt
+- `min-height: 100vh`: Chiều cao tối thiểu bằng 100% viewport height (chiều cao màn hình)
+- `font-weight: bold`: Chữ đậm cho toàn bộ trang
+- `letter-spacing: 2px`: Khoảng cách giữa các chữ cái là 2px
+- `margin: 0; padding: 20px`: Bỏ margin mặc định, thêm padding 20px xung quanh
+- `font-family`: Sử dụng font Times New Roman
+
+## 2. Reset CSS toàn cục
+```css
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+```
+**Giải thích:**
+- `*`: Selector chọn TẤT CẢ elements
+- `margin: 0; padding: 0`: Reset về 0 cho tất cả margin và padding
+- `box-sizing: border-box`: Tính toán kích thước bao gồm cả border và padding
+
+## 3. Container chính (.main)
+```css
+.main {
+  background-color: white;
+  height: auto;
+  width: 650px;
+  margin: 0 auto;
+  display: flex;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+```
+**Giải thích:**
+- `background-color: white`: Nền trắng
+- `height: auto`: Chiều cao tự động theo nội dung
+- `width: 650px`: Chiều rộng cố định 650px
+- `margin: 0 auto`: Căn giữa theo chiều ngang
+- `display: flex`: Sử dụng Flexbox layout
+- `box-shadow`: Tạo bóng đổ mờ xung quanh
+
+## 4. Cột trái (.left)
+```css
+.left {
+  background-color: #fbb03b;
+  width: 200px;
+  padding: 20px 0;
+  min-height: 800px;
+}
+```
+**Giải thích:**
+- `background-color: #fbb03b`: Màu cam/vàng
+- `width: 200px`: Chiều rộng cố định 200px
+- `padding: 20px 0`: Padding trên/dưới 20px, trái/phải 0px
+- `min-height: 800px`: Chiều cao tối thiểu 800px
+
+## 5. Cột phải (.right)
+```css
+.right {
+  width: 450px;
+  background-color: white;
+}
+```
+**Giải thích:**
+- `width: 450px`: Chiều rộng 450px (650 - 200 = 450)
+- `background-color: white`: Nền trắng
+
+## 6. Ảnh đại diện (.profile-img)
+```css
+.profile-img {
+  height: 120px;
+  width: 120px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  border: 8px solid white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+```
+**Giải thích:**
+- `height: 120px; width: 120px`: Kích thước 120x120px
+- `background-color: #ddd`: Màu xám nhạt làm placeholder
+- `border-radius: 50%`: Bo tròn 50% = hình tròn hoàn hảo
+- `margin: 0 auto 20px`: Top=0, Left/Right=auto (căn giữa), Bottom=20px
+- `border: 8px solid white`: Viền trắng dày 8px
+- `box-shadow`: Bóng đổ để tạo chiều sâu
+
+## 7. Container cho mỗi section (.box-1)
+```css
+.box-1 {
+  position: relative;
+  margin-bottom: 20px;
+}
+```
+**Giải thích:**
+- `position: relative`: Để có thể định vị tuyệt đối cho pseudo-element
+- `margin-bottom: 20px`: Khoảng cách 20px với section tiếp theo
+
+## 8. Tiêu đề section (.heading)
+```css
+.heading {
+  background-color: #4d4d4d;
+  padding: 10px;
+  color: #fbb03b;
+  text-align: left;
+  padding-left: 20px;
+  margin-right: -15px;
+  position: relative;
+}
+```
+**Giải thích:**
+- `background-color: #4d4d4d`: Nền xám đậm
+- `padding: 10px; padding-left: 20px`: Padding 10px, trái 20px
+- `color: #fbb03b`: Chữ màu cam
+- `margin-right: -15px`: Âm margin để tạo chỗ cho mũi tên
+- `position: relative`: Để định vị pseudo-element
+
+## 9. Mũi tên cho heading (::after)
+```css
+.heading::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 15px solid #4d4d4d;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+```
+**Giải thích:**
+- `content: ""`: Tạo pseudo-element rỗng
+- `position: absolute`: Định vị tuyệt đối
+- `width: 0; height: 0`: Không có kích thước
+- `border-left: 15px solid #4d4d4d`: Border trái tạo thành mũi tên
+- `border-top/bottom: transparent`: Border trong suốt để tạo hình tam giác
+- `right: -15px`: Đặt ở ngoài cùng bên phải
+- `top: 50%; transform: translateY(-50%)`: Căn giữa theo chiều dọc
+
+## 10. Text trong section (.p1)
+```css
+.p1 {
+  padding: 9px 15px;
+  font-size: 11px;
+  color: #333;
+}
+```
+**Giải thích:**
+- `padding: 9px 15px`: Padding trên/dưới 9px, trái/phải 15px
+- `font-size: 11px`: Cỡ chữ 11px
+- `color: #333`: Màu xám đậm
+
+## 11. Icons (.icons1)
+```css
+.icons1 {
+  font-size: 16px !important;
+  padding-right: 10px !important;
+  vertical-align: middle;
+}
+```
+**Giải thích:**
+- `font-size: 16px !important`: Cỡ icon 16px, `!important` ghi đè style khác
+- `padding-right: 10px`: Khoảng cách 10px với text bên cạnh
+- `vertical-align: middle`: Căn giữa theo chiều dọc với text
+
+## 12. Skill items (.skill-item)
+```css
+.skill-item {
+  margin-bottom: 15px;
+  padding: 0 15px;
+}
+```
+**Giải thích:**
+- `margin-bottom: 15px`: Khoảng cách 15px giữa các skill
+- `padding: 0 15px`: Padding trái/phải 15px
+
+## 13. Skill bars containers
+```css
+.skill-container,
+.skill-web,
+.skill-graphic {
+  width: 100%;
+  background-color: #4d4d4d;
+  height: 8px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+```
+**Giải thích:**
+- `width: 100%`: Chiều rộng đầy đủ container
+- `background-color: #4d4d4d`: Nền xám đậm (thanh rỗng)
+- `height: 8px`: Chiều cao thanh skill
+- `border-radius: 4px`: Bo góc 4px
+- `margin-top: 5px`: Khoảng cách 5px với text trên
+
+## 14. Skill progress (.skill)
+```css
+.skill {
+  height: 100%;
+  background-color: white;
+  border-radius: 4px;
+  width: 90%;
+}
+```
+**Giải thích:**
+- `height: 100%`: Chiều cao đầy đủ container
+- `background-color: white`: Màu trắng (phần đã fill)
+- `border-radius: 4px`: Bo góc giống container
+- `width: 90%`: Độ thành thạo 90%
+
+## 15. Specific skill widths
+```css
+.html {
+  width: 90%;
+  background-color: white;
+}
+
+.css {
+  width: 90%;
+  background-color: white;
+}
+
+.js {
+  width: 90%;
+  background-color: white;
+}
+```
+**Giải thích:**
+- Định nghĩa độ thành thạo cho từng skill cụ thể
+- Có thể thay đổi width để hiển thị level khác nhau
+
+## 16. Hobbies container (.h-div)
+```css
+.h-div {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  font-size: 20px;
+  color: #4d4d4d;
+}
+```
+**Giải thích:**
+- `display: flex`: Sắp xếp icons theo hàng ngang
+- `justify-content: space-around`: Phân bố đều với khoảng cách xung quanh
+- `padding: 15px`: Padding 15px
+- `font-size: 20px`: Cỡ icon 20px
+- `color: #4d4d4d`: Màu xám đậm
+
+## 17. Right section content (.right-section)
+```css
+.right-section {
+  padding: 40px 30px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+```
+**Giải thích:**
+- `padding: 40px 30px`: Padding trên/dưới 40px, trái/phải 30px
+- `font-size: 14px`: Cỡ chữ mặc định 14px
+- `line-height: 1.6`: Khoảng cách dòng = 1.6 × font-size
+
+## 18. Name styling (.name)
+```css
+.name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  letter-spacing: 3px;
+}
+```
+**Giải thích:**
+- `font-size: 28px`: Cỡ chữ lớn cho tên
+- `font-weight: bold`: Chữ đậm
+- `color: #333`: Màu xám đậm
+- `margin-bottom: 5px`: Khoảng cách 5px với element tiếp theo
+- `letter-spacing: 3px`: Khoảng cách giữa các chữ cái
+
+## 19. Position/Job title (.position)
+```css
+.position {
+  font-size: 16px;
+  color: #fbb03b;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+```
+**Giải thích:**
+- `font-size: 16px`: Cỡ chữ 16px
+- `color: #fbb03b`: Màu cam (highlight)
+- `margin-bottom: 30px`: Khoảng cách lớn với section tiếp theo
+- `font-weight: normal`: Bỏ chữ đậm (override từ body)
+
+## 20. Section containers (.section)
+```css
+.section {
+  margin-bottom: 25px;
+}
+```
+**Giải thích:**
+- `margin-bottom: 25px`: Khoảng cách 25px giữa các section
+
+## 21. Section headings (.section h3)
+```css
+.section h3 {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #fbb03b;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+```
+**Giải thích:**
+- `color: #333`: Màu xám đậm
+- `font-size: 16px`: Cỡ chữ 16px
+- `margin-bottom: 15px`: Khoảng cách với nội dung
+- `border-bottom: 2px solid #fbb03b`: Gạch dưới màu cam 2px
+- `padding-bottom: 5px`: Khoảng cách với border
+- `display: inline-block`: Để border chỉ dài bằng text
+
+## 22. Company names (.section h4)
+```css
+.section h4 {
+  color: #fbb03b;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+```
+**Giải thích:**
+- `color: #fbb03b`: Màu cam để highlight
+- `font-size: 14px`: Cỡ chữ 14px
+- `margin-top: 15px`: Khoảng cách với section trước
+- `margin-bottom: 5px`: Khoảng cách với nội dung sau
+
+## 23. Paragraphs (.section p)
+```css
+.section p {
+  margin-bottom: 10px;
+  color: #555;
+}
+```
+**Giải thích:**
+- `margin-bottom: 10px`: Khoảng cách giữa các đoạn
+- `color: #555`: Màu xám vừa (dễ đọc)
+
+## 24. Lists (.section ul, li)
+```css
+.section ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  color: #555;
+}
+
+.section ul li {
+  margin-bottom: 8px;
+}
+```
+**Giải thích:**
+- `padding-left: 20px`: Thụt lề 20px
+- `list-style-type: disc`: Bullet points tròn
+- `color: #555`: Màu xám vừa
+- `margin-bottom: 8px`: Khoảng cách giữa các list item
+
+## 25. Bold text (.section strong)
+```css
+.section strong {
+  color: #333;
+}
+```
+**Giải thích:**
+- `color: #333`: Màu đậm hơn cho text quan trọng
+
+## 26. Responsive Design
+```css
+@media (max-width: 700px) {
+  .main {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .left, .right {
+    width: 100%;
+  }
+  
+  .left {
+    min-height: auto;
+  }
+}
+```
+**Giải thích:**
+- `@media (max-width: 700px)`: Khi màn hình nhỏ hơn 700px
+- `width: 100%`: Container chiếm toàn bộ chiều rộng
+- `flex-direction: column`: Chuyển từ 2 cột thành 2 hàng
+- `width: 100%`: Mỗi phần chiếm toàn bộ chiều rộng
+- `min-height: auto`: Bỏ chiều cao tối thiểu cho mobile
+
+---
+
+## Tổng kết
+CSS này tạo ra một CV professional với:
+- Layout 2 cột sử dụng Flexbox
+- Màu sắc hài hòa (cam, xám, trắng)
+- Typography rõ ràng với hierarchy
+- Responsive design cho mobile
+- Visual effects như shadows, gradients, arrows
+- Skill bars để hiển thị năng lực
+
+\\**

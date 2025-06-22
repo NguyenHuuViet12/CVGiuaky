@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nguyen Huu Viet</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <nav class="navbar" id="navbar">
+        <h2 class="logo">Nguyen Huu Viet</h2>
+        <div class="menu">
+          <ul>
+            <li><a href="#Trangtru">Home</a></li>
+            <li><a href="#Thongtin">About</a></li>
+            <li><a href="#Skill">Skill</a></li>
+            <li><a href="cv.html">General</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section id="Trangtru">
+        <div class="Title">
+          <h1>Hi Everyone. I'm Nguyen Huu Viet</h1>
+          <h2>
+            I'm a <strong>Back-End Developer</strong>. I am very interested in
+            the Back-End Developer position because it allows me to focus on
+            building the logic, structure, and performance of web applications.
+            I enjoy designing efficient systems, working with databases, APIs,
+            and ensuring data security and scalability. Every back-end challenge
+            is an opportunity to optimize performance and stability, and I am
+            passionate about creating strong foundations that support seamless
+            user experiences.
+          </h2>
+        </div>
+      </section>
+    </div>
+
+    <section id="Thongtin" class="profile-section">
+      <h2>Thông tin cá nhân</h2>
+      <div class="profile-info">
+        <p><strong>Họ và tên:</strong> Nguyễn Hữu Việt</p>
+        <p><strong>Ngày sinh:</strong> 11/02/2005</p>
+        <p><strong>Giới tính:</strong> Nam</p>
+        <p><strong>Số điện thoại:</strong> 0123 456 789</p>
+        <p><strong>Email:</strong> nguyenviet@example.com</p>
+        <p><strong>Địa chỉ:</strong> Quận 1, TP. Hồ Chí Minh</p>
+        <p>
+          <strong>Trình độ học vấn:</strong> Đại học - Giao thông vận tải TP.
+          HCM
+        </p>
+      </div>
+
+      <div class="image">
+        <img src="./Video/Anh.png" alt="Anh cv" />
+      </div>
+    </section>
+
+    <section id="Skill" class="skills-section">
+      <h2>KỸ NĂNG</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <img src="./Video/html.png" alt="HTML icon" />
+          <p>HTML</p>
+          <div class="progress-bar"><span style="width: 90%"></span></div>
+          <p class="percent">90%</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="./Video/css.png" alt="CSS icon" />
+          <p>CSS</p>
+          <div class="progress-bar"><span style="width: 70%"></span></div>
+          <p class="percent">85%</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="./Video/js.webp" alt="JS icon" />
+          <p>JavaScript</p>
+          <div class="progress-bar"><span style="width: 80%"></span></div>
+          <p class="percent">80%</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="./Video/nodejs.png" alt="Node.js icon" />
+          <p>Node.js</p>
+          <div class="progress-bar"><span style="width: 75%"></span></div>
+          <p class="percent">75%</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="./Video/git.png" alt="Github" />
+          <p>Github</p>
+          <div class="progress-bar"><span style="width: 80%"></span></div>
+          <p class="percent">80%</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="./Video/docker.webp" alt="Docker" />
+          <p>Docker</p>
+          <div class="progress-bar"><span style="width: 85%"></span></div>
+          <p class="percent">85%</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // JavaScript để ẩn/hiện navbar khi cuộn
+      let lastScrollTop = 0;
+      const navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", function () {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          // Cuộn xuống - ẩn navbar
+          navbar.style.transform = "translateY(-100%)";
+        } else {
+          // Cuộn lên - hiện navbar
+          navbar.style.transform = "translateY(0)";
+        }
+        lastScrollTop = scrollTop;
+      });
+    </script>
+  </body>
+</html>
